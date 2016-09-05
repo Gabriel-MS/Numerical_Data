@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1466870940 source:c:\ufrj\atoms\numerical\código fonte\interface.cpp
+	"stdafx.h"
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"interpolation.h"
+

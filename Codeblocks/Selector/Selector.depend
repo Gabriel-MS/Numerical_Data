@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1473048420 source:c:\ufrj\atoms\numerical\codeblocks\selector\main.cpp
+	<iostream>
+	<cmath>
+	<cstdio>
+	<stdio.h>
+	<fstream>
+	<Eigen/Dense>
+	<unsupported/Eigen/MatrixFunctions>
+	<unsupported/Eigen/KroneckerProduct>
+

@@ -118,9 +118,7 @@ for(i=0; i<491; i++)
 /*
             P_diff(i,i) = x;
             u_diff(i,i) = x;
-
             int k;
-
             for(j=0; j<21; j++)
             {
                 k = i+j;
@@ -160,5 +158,48 @@ MatrixXd::Index minU1, minU2, minP1, minP2, min1, min2;
     cout << rho_vec[min1] << endl;
     cout << rho_vec[min2] << endl;
 
-    return 0;
+    double P_test, u_test, min_P_old, min_u_old;
+    min_P_old = 42;
+    min_u_old = 42;
+
+    for(i=0; i<500; i++)
+    {
+    cout << "i = " << i << endl;
+     P_test = P_vec[i];
+     u_test = u_vec[i];
+
+        for(j=500; j>0; j=j-1)
+        {
+         min_P = min(fabs(P_test - P_vec[j]), min_P_old);
+         if(min_P<min_P_old) min_P_old = min_P;
+         if(min_P<1 && min_P != 0)
+         {
+             min1 = i;
+             cout << "found minP = " << min_P << endl;
+             min_u = min(fabs(u_test - u_vec[j]), min_u_old);
+             if(min_u<min_u_old) min_u_old = min_u;
+             if(min_u<1 && min_u != 0)
+             {
+                 cout << "found minu = " << min_u << endl;
+                 min2 = j;
+                 j=-1;
+             }
+
+         }
+        }
+    }
+    cout << "new test" << endl;
+    cout << rho_vec[min1] << endl;
+    cout << rho_vec[min2] << endl;
+
+int stop;
+cin >> stop;
+
+getchar();
 }
+
+
+
+
+
+
